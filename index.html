@@ -17,17 +17,27 @@
   --cut-bg:#F7EBE5;
   --gauge:#1F5F5B;
   /* Button resting state. Separate from --deep (#15181A) because a near-black
-     slab reads as disabled until you hover it. Light enough to look active,
-     still about 10:1 against white text. */
-  --btn:#3F484E;
+     slab reads as disabled until you hover it.
+     Raised a SECOND time, 2026-09-16: #3F484E was still being read as disabled.
+     An incremental nudge was the wrong answer the first time, so this moves
+     properly. Measured rather than eyeballed: #606E79 is 5.24:1 against the
+     white label (AA needs 4.5:1 at this 16px size) and 4.3:1 against the
+     #E8E9E6 page, so the slab reads as a control and the label stays legible.
+     Lighter fill raises page contrast and lowers label contrast, so the usable
+     window is bounded at both ends - past about #68757F the label fails. */
+  --btn:#606E79;
   /* Button TEXT is its own token. It used to be --mill, which is white in light
      mode but #181C1F in dark - so every button rendered near-black text on a
      near-black slab and the label vanished. */
   --btn-ink:#FFFFFF;
-  /* Button EDGE. In light mode the dark button already separates from the pale
-     page, so the edge matches the fill and nothing changes. Dark mode overrides
-     it with a visible outline. */
-  --btn-edge:#3F484E;
+  /* Button EDGE. In light mode the button already separates from the pale page,
+     so the edge matches the fill and nothing changes. Dark mode overrides it
+     with a visible outline.
+     Moved with --btn on 2026-09-16: left at #3F484E it became DARKER than the
+     fill it is supposed to match, drawing an outline the comment above promises
+     is not there. A token that must track another is a standing trap, so if
+     --btn moves again this moves with it. */
+  --btn-edge:#606E79;
   --display:"Barlow Condensed",Impact,"Arial Narrow",sans-serif;
   --ui:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
