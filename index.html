@@ -148,6 +148,13 @@ h2{font-family:var(--display);font-size:clamp(24px,3.4vw,34px);font-weight:700;c
 .from b{display:block;font-family:var(--display);font-size:19px;font-weight:700;
   text-transform:uppercase;color:var(--ink);letter-spacing:.02em}
 .from span{font-size:14px;color:var(--dim)}
+.rollers{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:0;padding:0;list-style:none}
+.rollers figure{margin:0;border:1px solid var(--rule);background:var(--mill);border-radius:3px;overflow:hidden}
+.rollers img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.rollers figcaption{padding:12px 14px}
+.rollers b{display:block;font-family:var(--display);font-size:19px;font-weight:700}
+.rollers span{font-size:13px;color:var(--dim)}
+@media (max-width:900px){.rollers{grid-template-columns:repeat(2,1fr)}}
 
 /* served */
 /* The client's own sector list. NAMES ONLY, because their capability sheet
@@ -213,6 +220,7 @@ footer{border-top:1px solid var(--hair);margin-top:12px;padding:20px 0 40px;
     <a class="mark" href="#top">Steelworks Ontario<span>&nbsp;Fabrication</span></a>
     <nav>
       <a href="#parts">Parts</a>
+      <a href="#rollers">Rollers</a>
       <a href="#from">How to order</a>
       <a href="#served">Industries</a>
       <a class="cta" href="#quote">Get a quote</a>
@@ -276,6 +284,22 @@ footer{border-top:1px solid var(--hair);margin-top:12px;padding:20px 0 40px;
         <a class="btn" href="#quote" id="send">Send this list</a>
       </div>
     </div>
+  </section>
+
+  <section id="rollers">
+    <h2>Rollers</h2>
+    <p class="lede">Rollers made to your drawing or matched to a worn sample: chrome, idler,
+      extruder and anodized.</p>
+    <ul class="rollers">
+      <li><figure><img src="img/chrome-rollers.jpg" width="800" height="600" loading="lazy" decoding="async" alt="A polished steel roll shell with a bolted flange end">
+        <figcaption><b>Chrome rollers</b><span>Polished, plated roll shells. Representative photo.</span></figcaption></figure></li>
+      <li><figure><img src="img/idler-rollers.jpg" width="800" height="600" loading="lazy" decoding="async" alt="A roller conveyor curve made of rows of idler rollers">
+        <figcaption><b>Idler rollers</b><span>Conveyor and gravity rollers. Representative photo.</span></figcaption></figure></li>
+      <li><figure><img src="img/extruder-attachments.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Rollers on a plastic film extrusion line">
+        <figcaption><b>Extruder attachments</b><span>Rollers and fittings for extrusion lines. Representative photo.</span></figcaption></figure></li>
+      <li><figure><img src="img/anodized-finish.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Anodized aluminium parts showing the coloured anodized finish">
+        <figcaption><b>Anodize rollers</b><span>Anodized aluminium finish. Representative photo.</span></figcaption></figure></li>
+    </ul>
   </section>
 
   <section id="from">
